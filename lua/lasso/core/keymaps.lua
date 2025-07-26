@@ -32,15 +32,14 @@ kb.set("n", "<A-k>", ":m .-2<CR>==", { desc = "move line up" })
 kb.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "move selection down" })
 kb.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "move selection up" })
 
--- terminal 
-kb.set("n", "<leader>ot", function() 
-  vim.cmd.tabnew()
-  vim.cmd.term()
-  vim.api.nvim_win_set_height(0, 20)
-end, { desc = "open terminal" })
-
 -- misc
 kb.set("n", "<leader>e", ":Explore<CR>", { desc = "open file explorer" })
 kb.set("n", "<leader>ff", ":find ", { desc = "find file" })
 kb.set("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Edit config" })
-
+kb.set("n", "<leader>nf", function()
+  file_name = vim.fn.input("enter file name: ")
+  
+  if file_name ~= "" then 
+    vim.cmd("e %:p:h/" .. file_name)
+  end
+end, { desc = "create new file" })   
