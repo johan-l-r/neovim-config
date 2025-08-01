@@ -11,6 +11,7 @@ o.shiftwidth = 2 -- indentation is equal to 2 spaces
 o.tabstop = 2
 o.signcolumn = "yes" -- I like the little gap in the number column 
 o.colorcolumn = "100" -- show a mark for line length
+o.autoindent = true
 
 -- neovim keymaps 
 km.set("n", "<leader>so", function() 
@@ -24,9 +25,14 @@ km.set("n", "<leader>oe", ":Explore<cr>", { desc = "open netrw" })
 
 -- plugins! (with vim.pack)
 vim.pack.add({
-	{ src = "https://github.com/thesimonho/kanagawa-paper.nvim" }
+	{ src = "https://github.com/thesimonho/kanagawa-paper.nvim" }, 
+	{ src = "https://github.com/neovim/nvim-lspconfig" }
 })
 
 vim.cmd("colorscheme kanagawa-paper")
 
-
+vim.lsp.enable({
+	-- list of desired LSPs
+	"lua_ls", 
+	"pyright"
+})
