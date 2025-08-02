@@ -1,5 +1,6 @@
-require("plugins.kanagawa")
-require("plugins.lsp")
+require("lasso.plugins.kanagawa")
+require("lasso.plugins.lsp")
+require("lasso.plugins.gitsigns")
 
 vim.g.mapleader = " "
 
@@ -24,7 +25,8 @@ km.set("n", "<leader>so", function()
 	vim.api.nvim_echo( {{"config sourced! \n" }}, false, {}) -- prints when config is sourced
 end, { desc = "source config" })
 
+
 km.set("n", "<leader>oe", ":Explore<cr>", { desc = "open netrw" })
+
 km.set("n", "<leader>bn", ":bnext<cr>", { desc = "open netrw" })
 km.set("n", "<leader>bp", ":nprevious<cr>", { desc = "open netrw" })
-
