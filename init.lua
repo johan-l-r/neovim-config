@@ -1,5 +1,6 @@
 require("plugins.kanagawa")
 require("plugins.lsp")
+require("plugins.gitsigns")
 
 vim.g.mapleader = " "
 
