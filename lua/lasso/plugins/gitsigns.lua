@@ -22,7 +22,9 @@ signs.setup({
 
 		km.set("n", "<leader>sh", signs.stage_hunk, { desc = "stage hunk under cursor" })
 		km.set("n", "<leader>rh", signs.reset_hunk, { desc = "reset staged hunk under cursor" })
-		km.set("n", "<leader>sb", signs.stage_buffer, { desc = "reset staged buffer under cursor" })
-		km.set("n", "<leader>rb", signs.reset_buffer, { desc = "reset staged buffer under cursor" })
+		km.set("n", "<leader>sb", signs.stage_buffer, { desc = "stage buffer" })
+		km.set("n", "<leader>rb", signs.reset_buffer, { desc = "reset staged buffer" })
+		km.set("n", "<leader>ph", signs.preview_hunk, { desc = "show line changes" })
+		km.set("n", "<leader>dt", signs.diffthis, { desc = "show file changes" })
 	end
 })
