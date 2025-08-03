@@ -16,7 +16,6 @@ o.shiftwidth		 = 2 		 -- indentation is equal to 2 spaces
 o.tabstop				 = 2
 o.signcolumn		 = "yes" -- I like the little gap in the number column 
 o.colorcolumn 	 = "100" -- show a mark for line length
-o.autoindent 		 = true
 
 -- KEYMAPS 
 km.set("n", "<leader>so", function() 
