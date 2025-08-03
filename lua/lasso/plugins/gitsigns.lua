@@ -9,6 +9,7 @@ signs.setup({
 	signs_staged_enable = true,
   numhl      					= true,
 	signcolumn 					= true,
+	attach_to_untracked = true, 
 
 	on_attach = function()
 		km.set("n", "<leader>nh", function()

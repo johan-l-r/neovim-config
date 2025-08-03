@@ -1,6 +1,7 @@
 require("lasso.plugins.kanagawa")
 require("lasso.plugins.lsp")
 require("lasso.plugins.gitsigns")
+require("lasso.plugins.treesitter")
 
 vim.g.mapleader = " "
 

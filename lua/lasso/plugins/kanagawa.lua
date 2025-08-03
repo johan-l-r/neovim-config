@@ -1,5 +1,5 @@
 vim.pack.add({
-	{ src = "https://github.com/thesimonho/kanagawa-paper.nvim" }
+	{ src = "https://github.com/rebelot/kanagawa.nvim" }
 })
 
-vim.cmd("colorscheme kanagawa-paper")
+vim.cmd("colorscheme kanagawa-dragon")
