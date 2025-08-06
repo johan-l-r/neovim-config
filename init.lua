@@ -1,4 +1,5 @@
 require("lasso.plugins.kanagawa")
+require("lasso.plugins.fzf-lua")
 require("lasso.plugins.lsp")
 require("lasso.plugins.gitsigns")
 require("lasso.plugins.treesitter")
@@ -9,20 +10,20 @@ vim.g.mapleader = " "
 local o = vim.opt
 local km = vim.keymap
 
--- OPTIONS 
+-- OPTIONS
 o.number 				 = true
 o.relativenumber = true
 o.ignorecase 		 = true
 o.smartcase 	 	 = true
 o.splitright 		 = true
 o.splitbelow 		 = true
-o.swapfile 			 = false -- no swap files 
-o.shiftwidth		 = 2 		 -- indentation is equal to 2 spaces 
+o.swapfile 			 = false -- no swap files
+o.shiftwidth		 = 2 		 -- indentation is equal to 2 spaces
 o.tabstop				 = 2
-o.signcolumn		 = "yes" -- I like the little gap in the number column 
+o.signcolumn		 = "yes" -- I like the little gap in the number column
 o.colorcolumn 	 = "100" -- show a mark for line length
 
--- KEYMAPS 
+-- KEYMAPS
 km.set("n", "<leader>bn", ":bnext<cr>", { desc = "goto next buffer" })
 km.set("n", "<leader>bp", ":nprevious<cr>", { desc = "goto prev buffer" })
 
@@ -40,3 +41,5 @@ km.set("n", "<C-d>", "<C-d>zz", { desc = "move half the file down and center the
 km.set("n", "<leader>rc", ":e ~/.config/nvim/init.lua<cr>", { desc = "goto config" })
 km.set("n", "<leader>vs", ":vsplit<cr>", { desc = "open new vertical split" })
 km.set("n", "<leader>hs", ":split<cr>", { desc = "open new horizontal split" })
+km.set("n", "<leader>yl", "\"+yy", { desc = "yank line to clipboard" })
+km.set("n", "<leader>yf", "ggVG\"+y", { desc = "yank file to clipboard" })
