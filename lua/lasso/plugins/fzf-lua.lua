@@ -7,6 +7,6 @@ local km = vim.keymap
 
 fzf.setup({})
 
-km.set("n", "<leader>ff", function() fzf.files() end, { desc = "show files in cwd" })
-km.set("n", "<leader>fc", function() fzf.files({ cwd = "~/.confing/nvim" }) end, { desc = "show config files" })
+km.set("n", "<leader>ff", ":FzfLua files<cr>", { desc = "show files in cwd" })
+km.set("n", "<leader>fc", ":FzfLua files cwd=~/.config/nvim/<cr>", { desc = "show files in cwd" })
 

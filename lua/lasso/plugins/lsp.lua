@@ -7,8 +7,9 @@ vim.pack.add({
 
 -- LSP CONFIG
 local lspconf = require("lspconfig")
-
+local fzf = require("fzf-lua")
 local blink = require("blink.cmp")
+
 local capabilities = blink.get_lsp_capabilities()
 
 -- list of all language servers to enable
@@ -78,3 +79,28 @@ blink.setup({
 	},
 	fuzzy = { implementation = "lua" }
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+
+	callback = function(event)
+		local km = vim.keymap
+		local opts = { buffer = event.buf, silent = true }
+
+		opts.desc = "show code actions with fzf-lua"
+		km.set("n", "<leader>ca", function() fzf.lsp_code_actions() end, opts)
+
+		opts.desc = "goto references"
+		km.set("n", "<leader>gr", function() fzf.lsp_references() end, opts)
+
+		opts.desc = "goto definition"
+		km.set("n", "<leader>gd", function() fzf.lsp_definitions() end, opts)
+
+		opts.desc = "goto declaration"
+		km.set("n", "<leader>gD", function() fzf.lsp_declarations() end, opts)
+
+		opts.desc = "show diagnostics with fzf lua"
+		km.set("n", "<leader>sg", function() fzf.lsp_document_diagnostics() end, opts)
+	end
+})
+

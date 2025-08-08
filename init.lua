@@ -1,11 +1,11 @@
+vim.g.mapleader = " "
+
 require("lasso.plugins.kanagawa")
 require("lasso.plugins.fzf-lua")
 require("lasso.plugins.lsp")
 require("lasso.plugins.gitsigns")
 require("lasso.plugins.treesitter")
 require("lasso.core.autocmds")
-
-vim.g.mapleader = " "
 
 local o = vim.opt
 local km = vim.keymap
