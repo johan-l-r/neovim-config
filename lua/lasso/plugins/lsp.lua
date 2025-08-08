@@ -68,7 +68,10 @@ blink.setup({
 			auto_show = true,
 		},
 	},
-	signature = { window = { border = "single" } },
+	signature = {
+		enabled = true,
+		window = { border = "single" },
+	},
 	sources = {
 		default = {
 			"lsp",
